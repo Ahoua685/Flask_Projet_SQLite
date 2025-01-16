@@ -119,7 +119,7 @@ def Readlivre():
     conn.close()
     return render_template('livre_data.html', data=data)
     
-    
+   
 @app.route('/stock/')
 def Readstock():
     conn = sqlite3.connect('bibliotheque.db')
