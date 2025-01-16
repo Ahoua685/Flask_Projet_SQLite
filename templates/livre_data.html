@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Livres</title>
+</head>
+<body>
+
+    <h1>Liste des Livres</h1>
+
+    <!-- Formulaire pour emprunter un livre -->
+    <form action="/livres" method="POST">
+     <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Titre</th>
+                    <th>Auteur</th>
+                    <th>Genre</th>
+                    <th>annee_publication</th>
+                    <th>Disponible</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                {% for livre in livres %}
+                <tr>
+                    <td>{{ livre[0] }}</td> <!-- ID -->
+                    <td>{{ livre[1] }}</td> <!-- Titre -->
+                    <td>{{ livre[2] }}</td> <!-- Auteur -->
+                    <td>{{ livre[3] }}</td> <!-- Genre -->
+                    <td>{{ livre[4] }}</td> <!-- Année de Publication -->
+                    <td>{{ livre[5] }}</td> <!-- Disponible (1 pour disponible, 0 pour non disponible) -->
+                    <td>
+                        <input type="radio" name="livre_id" value="{{ livre[0] }}">
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+    
+    </form>
+
+</body>
+</html>
