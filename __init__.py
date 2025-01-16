@@ -87,7 +87,7 @@ def Readfiche_nom(nom):
     conn.close()
     # Rendre le template HTML et transmettre les données
     return render_template('read_data.html', data=data)
-    @app.route('/enregistrer_client', methods=['POST'])
+@app.route('/enregistrer_livre', methods=['POST'])
 def enregistrer_livre():
     titre = request.form['titre']
     edition = request.form['edition']
