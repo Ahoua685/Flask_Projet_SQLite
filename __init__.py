@@ -126,6 +126,7 @@ def Readstock():
     data = cursor.fetchall()
     conn.close()
     return render_template('stocklivre_data.html', data=data)
+    
    
     
     
