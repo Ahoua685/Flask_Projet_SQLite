@@ -26,14 +26,7 @@
                 <td>{{ livre[2] }}</td>  <!-- Auteur -->
                 <td>{{ livre[3] }}</td>  <!-- Genre -->
                 <td>{{ livre[4] }}</td>  <!-- Quantité en Stock -->
-                <td>
-                    <!-- Formulaire pour modifier la quantité -->
-                    <form action="/stock/" method="POST">
-                        <input type="hidden" name="livre_id" value="{{ livre[0] }}">
-                        <input type="number" name="quantite" value="{{ livre[4] }}" min="0" required>
-                        <button type="submit">Mettre à jour</button>
-                    </form>
-                </td>
+                
             </tr>
             {% endfor %}
         </tbody>
