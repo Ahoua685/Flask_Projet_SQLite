@@ -87,6 +87,21 @@ def Readfiche_nom(nom):
     conn.close()
     # Rendre le template HTML et transmettre les données
     return render_template('read_data.html', data=data)
+    @app.route('/enregistrer_client', methods=['POST'])
+def enregistrer_livre():
+    titre = request.form['titre']
+    edition = request.form['edition']
+    
+
+    # Connexion à la base de données
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+
+    # Exécution de la requête SQL pour insérer un nouveau client
+    cursor.execute('INSERT INTO livre (created, titre, edition) VALUES (?, ?, ?, ?)', (100, titre, edition, "ICI"))
+    conn.commit()
+    conn.close()
+    return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
 
                                                                                                                                        
 if __name__ == "__main__":
