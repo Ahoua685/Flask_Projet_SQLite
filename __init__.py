@@ -125,7 +125,7 @@ def Readstock():
     cursor.execute('SELECT * FROM stock;')
     data = cursor.fetchall()
     conn.close()
-    return render_template('livre_data.html', data=data)
+    return render_template('stocklivre_data.html', data=data)
    
     
     
