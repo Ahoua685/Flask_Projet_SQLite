@@ -4,7 +4,7 @@ import sqlite3
 connection = sqlite3.connect('bibliotheque.db')
 
 # Exécution du script de création des tables (schema.sql)
-with open('schema.sql') as f:
+with open('schema1.sql') as f:
     connection.executescript(f.read())
 
 # Création d'un curseur pour exécuter les requêtes
