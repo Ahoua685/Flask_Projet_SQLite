@@ -110,11 +110,11 @@ def lireutilisateur(post_id):
     # Rendre le template HTML et transmettre les données
     return render_template('read_data1.html', data=data)
 
-@app.route('/livre/')
+@app.route('/liste_livre/')
 def Readliste_livre():
     conn = sqlite3.connect('bibliotheque.db')
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM stock;')
+    cursor.execute('SELECT * FROM liste_livre;')
     data = cursor.fetchall()
     conn.close()
     return render_template('livre_data.html', data=data)
