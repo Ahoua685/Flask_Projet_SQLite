@@ -78,7 +78,7 @@ def enregistrer_client():
     return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
 @app.route('/fiche_nom/<string:nom>')
 def Readfiche_nom(nom): 
-    if not est_authentifie():
+     if not est_authentifie():
         
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
