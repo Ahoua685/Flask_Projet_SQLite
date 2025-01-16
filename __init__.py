@@ -100,7 +100,7 @@ def ReadUtilisateur():
     return render_template('read_data1.html', data=data)
 
 
- @app.route('/utilisateur/<int:post_id>')
+@app.route('/utilisateur/<int:post_id>')
 def lireutilisateur(post_id):
     conn = sqlite3.connect('bibliotheque.db')
     cursor = conn.cursor()
