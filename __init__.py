@@ -89,7 +89,7 @@ def Readfiche_nom(nom):
     return render_template('read_data.html', data=data)
 @app.route('/Utilsateur/')
 def ReadUtilisateur():
-    conn = sqlite3.connect('database.db')
+    conn = sqlite3.connect('bibliotheque.db')
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM Utilisateur;')
     data = cursor.fetchall()
