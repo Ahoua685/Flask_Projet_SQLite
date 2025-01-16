@@ -87,7 +87,7 @@ def Readfiche_nom(nom):
     conn.close()
     # Rendre le template HTML et transmettre les données
     return render_template('read_data.html', data=data)
-@app.route('/Utilsateur/')
+@app.route('/utilsateur/')
 def ReadUtilisateur():
     conn = sqlite3.connect('bibliotheque.db')
     cursor = conn.cursor()
