@@ -118,6 +118,14 @@ def readlivre(post_id):
     conn.close()
     # Rendre le template HTML et transmettre les données
     return render_template('livre_data.html', data=data)
+@app.route('/stock/')
+def Readstock():
+    conn = sqlite3.connect('bibliotheque.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM stock;')
+    data = cursor.fetchall()
+    conn.close()
+    return render_template('livre_data.html', data=data)
    
     
     
