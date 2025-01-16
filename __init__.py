@@ -109,6 +109,15 @@ def lireutilisateur(post_id):
     conn.close()
     # Rendre le template HTML et transmettre les données
     return render_template('read_data1.html', data=data)
+@app.route('/livre/<int:post_id>')
+def readlivre(post_id):
+    conn = sqlite3.connect('bibliotheque.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM livre WHERE id = ?', (post_id,))
+    data = cursor.fetchall()
+    conn.close()
+    # Rendre le template HTML et transmettre les données
+    return render_template('livre_data.html', data=data)
    
     
     
