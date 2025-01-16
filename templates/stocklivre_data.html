@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock des Livres</title>
+</head>
+<body>
+
+    <h1>Stock des Livres</h1>
+
+    <!-- Table pour afficher les livres en stock -->
+    <table>
+        <thead>
+            <tr>
+                <th>Livre_id</th>
+                <th>Quantite_totale</th>
+                <th>Quantite_disponible</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for livre in data %}
+            <tr>
+                <td>{{ livre[0] }}</td>  <!-- ID du livre -->
+                <td>{{ livre[1] }}</td>  <!-- Titre -->
+                <td>{{ livre[2] }}</td>  <!-- Auteur -->
+                <td>{{ livre[3] }}</td>  <!-- Genre -->
+                <td>{{ livre[4] }}</td>  <!-- Quantité en Stock -->
+                <td>
+                    <!-- Formulaire pour modifier la quantité -->
+                    <form action="/stock/" method="POST">
+                        <input type="hidden" name="livre_id" value="{{ livre[0] }}">
+                        <input type="number" name="quantite" value="{{ livre[4] }}" min="0" required>
+                        <button type="submit">Mettre à jour</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
 
