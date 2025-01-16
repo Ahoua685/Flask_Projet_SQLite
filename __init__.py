@@ -109,6 +109,16 @@ def lireutilisateur(post_id):
     conn.close()
     # Rendre le template HTML et transmettre les données
     return render_template('read_data1.html', data=data)
+
+@app.route('/livre/')
+def Readliste_livre():
+    conn = sqlite3.connect('bibliotheque.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM stock;')
+    data = cursor.fetchall()
+    conn.close()
+    return render_template('livre_data.html', data=data)
+    
 @app.route('/livre/<int:post_id>')
 def readlivre(post_id):
     conn = sqlite3.connect('bibliotheque.db')
@@ -118,6 +128,7 @@ def readlivre(post_id):
     conn.close()
     # Rendre le template HTML et transmettre les données
     return render_template('livre_data.html', data=data)
+    
 @app.route('/stock/')
 def Readstock():
     conn = sqlite3.connect('bibliotheque.db')
