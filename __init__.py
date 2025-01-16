@@ -114,7 +114,7 @@ def lireutilisateur(post_id):
 def Readlivre():
     conn = sqlite3.connect('bibliotheque.db')
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM Livre;')
+    cursor.execute('SELECT * FROM livre;')
     data = cursor.fetchall()
     conn.close()
     return render_template('livre_data.html', data=data)
