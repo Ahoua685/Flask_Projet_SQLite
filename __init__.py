@@ -87,10 +87,14 @@ def Readfiche_nom(nom):
     conn.close()
     # Rendre le template HTML et transmettre les données
     return render_template('read_data.html', data=data)
-@app.route('/enregistrer_livre', methods=['POST'])
-def enregistrer_livre():
-    
-    return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
+@app.route('/Utilsateur/')
+def ReadUtilisateur():
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM Utilisateur;')
+    data = cursor.fetchall()
+    conn.close()
+    return render_template('read_data1.html', data=data)
 
                                                                                                                                        
 if __name__ == "__main__":
