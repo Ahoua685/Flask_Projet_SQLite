@@ -97,6 +97,7 @@ def ReadUtilisateur():
     return render_template('read_data1.html', data=data)
     
     
+    
 
                                                                                                                                        
 if __name__ == "__main__":
