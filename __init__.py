@@ -76,6 +76,8 @@ def enregistrer_client():
     conn.commit()
     conn.close()
     return redirect('/consultation/')  # Rediriger vers la page d'accueil après l'enregistrement
+    
+    
 @app.route('/fiche_nom/<string:nom>')
 def Readfiche_nom(nom): 
     if not est_authentifie(): 
@@ -87,6 +89,7 @@ def Readfiche_nom(nom):
     conn.close()
     # Rendre le template HTML et transmettre les données
     return render_template('read_data.html', data=data)
+
 @app.route('/utilsateur/')
 def ReadUtilisateur():
     conn = sqlite3.connect('bibliotheque.db')
@@ -95,7 +98,9 @@ def ReadUtilisateur():
     data = cursor.fetchall()
     conn.close()
     return render_template('read_data1.html', data=data)
-   @app.route('/utilisateur/<int:post_id>')
+
+
+ @app.route('/utilisateur/<int:post_id>')
 def lireutilisateur(post_id):
     conn = sqlite3.connect('bibliotheque.db')
     cursor = conn.cursor()
