@@ -96,7 +96,7 @@ def ReadUtilisateur():
     conn.close()
     return render_template('read_data1.html', data=data)
    @app.route('/utilisateur/<int:post_id>')
-def Readutilisateur(post_id):
+def lireutilisateur(post_id):
     conn = sqlite3.connect('bibliotheque.db')
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM utilisateur WHERE id = ?', (post_id,))
