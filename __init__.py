@@ -128,6 +128,11 @@ def Readstock():
     data = cursor.fetchall()
     conn.close()
     return render_template('stocklivre_data.html', data=data)
+
+@app.route('/enregistrer_utilisateur', methods=['GET'])
+def formulaire_utilisateur():
+    return render_template('formulaireutilisateur.html')  
+
     
    
     
