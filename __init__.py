@@ -131,7 +131,7 @@ def Readstock():
 
 @app.route('/enregistrer_utilisateur', methods=['GET'])
 def formulaire_utilisateur():
-    return render_template('formulaireutilisateur.html')  
+    return render_template('formulaire_utilisateur.html')  
 
     
    
